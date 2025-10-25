@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ButtonPreventDemo from '../pages/ButtonPreventDemo.vue';
 import FileUploadDemo from '../pages/FileUploadDemo.vue';
+import FormValidationDemo from '../pages/FormValidationDemo.vue';
 import ModalDemo from '../pages/ModalDemo.vue';
 
 // 日本語コメント: シンプルなルーティング定義
@@ -20,6 +21,11 @@ const routes = [
     path: '/modal',
     component: ModalDemo,
     meta: { title: 'モーダルデモ' },
+  },
+  {
+    path: '/form-validation',
+    component: FormValidationDemo,
+    meta: { title: 'フォームバリデーション' },
   },
 ];
 

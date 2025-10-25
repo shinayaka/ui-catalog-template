@@ -16,6 +16,12 @@
       <v-btn :variant="currentPath === '/modal' ? 'flat' : 'text'" to="/modal">
         モーダルデモ
       </v-btn>
+      <v-btn
+        :variant="currentPath === '/form-validation' ? 'flat' : 'text'"
+        to="/form-validation"
+      >
+        フォーム検証
+      </v-btn>
     </v-app-bar>
 
     <v-main>
