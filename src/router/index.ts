@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ButtonPreventDemo from '../pages/ButtonPreventDemo.vue';
+import DateInputDemo from '../pages/DateInputDemo.vue';
 import FileUploadDemo from '../pages/FileUploadDemo.vue';
 import FormValidationDemo from '../pages/FormValidationDemo.vue';
 import ModalDemo from '../pages/ModalDemo.vue';
@@ -26,6 +27,11 @@ const routes = [
     path: '/form-validation',
     component: FormValidationDemo,
     meta: { title: 'フォームバリデーション' },
+  },
+  {
+    path: '/date-input',
+    component: DateInputDemo,
+    meta: { title: '日付入力コンポーネント' },
   },
 ];
 

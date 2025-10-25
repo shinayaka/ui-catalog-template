@@ -1,12 +1,25 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
 import ButtonPrevent from '../components/ButtonPrevent.vue'
+import { vuetify } from '../plugins/vuetify'
+
+const mountButton = (props: Record<string, unknown> = {}) =>
+  mount(ButtonPrevent, {
+    props,
+    global: {
+      plugins: [vuetify],
+      stubs: {
+        Transition: false,
+        Teleport: true,
+      },
+    },
+  })
 
 // 日本語コメント: setTimeout の早送りに vi.useFakeTimers を使用
 describe('ButtonPrevent.vue', () => {
   it('クリックすると一定時間 disabled になる', async () => {
     vi.useFakeTimers()
-    const wrapper = mount(ButtonPrevent, { props: { lockMs: 1000 } })
+    const wrapper = mountButton({ lockMs: 1000 })
     const btn = wrapper.find('button')
     expect(btn.element.disabled).toBe(false)
 
@@ -23,7 +36,7 @@ describe('ButtonPrevent.vue', () => {
 
   it('連続クリックしても2回目は無視される', async () => {
     vi.useFakeTimers()
-    const wrapper = mount(ButtonPrevent, { props: { lockMs: 500 } })
+    const wrapper = mountButton({ lockMs: 500 })
     const btn = wrapper.find('button')
 
     await btn.trigger('click')
@@ -41,7 +54,7 @@ describe('ButtonPrevent.vue', () => {
   })
 
   it('props によりラベル表示が変わる', () => {
-    const wrapper = mount(ButtonPrevent, { props: { label: '実行' } })
+    const wrapper = mountButton({ label: '実行' })
     expect(wrapper.text()).toContain('実行')
   })
 })

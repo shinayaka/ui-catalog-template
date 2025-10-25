@@ -10,4 +10,15 @@ export default defineConfig({
       autoImport: true, // Vuetifyのコンポーネント/ディレクティブを自動インポート
     }),
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/tests/setup.ts',
+    server: {
+      deps: {
+        inline: ['vuetify'],
+      },
+    },
+    css: true,
+  },
 })

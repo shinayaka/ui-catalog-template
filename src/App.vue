@@ -22,6 +22,9 @@
       >
         フォーム検証
       </v-btn>
+      <v-btn :variant="currentPath === '/date-input' ? 'flat' : 'text'" to="/date-input">
+        日付入力
+      </v-btn>
     </v-app-bar>
 
     <v-main>
