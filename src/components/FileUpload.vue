@@ -53,8 +53,8 @@
             </v-list-item-subtitle>
 
             <template #append>
-              <v-btn
-                icon="mdi-close"
+                    <v-btn
+                      icon="mdi-close"
                 variant="text"
                 color="default"
                 @click="removeFile(index)"
