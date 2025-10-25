@@ -4,7 +4,15 @@
     <v-app-bar color="primary" density="comfortable" dark>
       <v-app-bar-title>UI Catalog</v-app-bar-title>
       <v-spacer />
-      <v-btn variant="text" to="/button-prevent">二度押し防止</v-btn>
+      <v-btn
+        :variant="currentPath === '/button-prevent' ? 'flat' : 'text'"
+        to="/button-prevent"
+      >
+        二度押し防止
+      </v-btn>
+      <v-btn :variant="currentPath === '/file-upload' ? 'flat' : 'text'" to="/file-upload">
+        ファイルアップロード
+      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -16,7 +24,11 @@
 </template>
 
 <script setup lang="ts">
-// ここでは特にロジックは不要です。ルーターの表示領域を用意しています。
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const currentPath = computed(() => route.path)
 </script>
 
 <style scoped>
