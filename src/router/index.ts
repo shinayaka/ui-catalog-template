@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ButtonPreventDemo from '../pages/ButtonPreventDemo.vue';
 import FileUploadDemo from '../pages/FileUploadDemo.vue';
+import ModalDemo from '../pages/ModalDemo.vue';
 
 // 日本語コメント: シンプルなルーティング定義
 const routes = [
@@ -14,6 +15,11 @@ const routes = [
     path: '/file-upload',
     component: FileUploadDemo,
     meta: { title: 'ファイルアップロード' },
+  },
+  {
+    path: '/modal',
+    component: ModalDemo,
+    meta: { title: 'モーダルデモ' },
   },
 ];
 

@@ -13,6 +13,9 @@
       <v-btn :variant="currentPath === '/file-upload' ? 'flat' : 'text'" to="/file-upload">
         ファイルアップロード
       </v-btn>
+      <v-btn :variant="currentPath === '/modal' ? 'flat' : 'text'" to="/modal">
+        モーダルデモ
+      </v-btn>
     </v-app-bar>
 
     <v-main>
